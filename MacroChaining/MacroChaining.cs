@@ -234,10 +234,6 @@ namespace MacroChaining
                     case "shared":
                     case "share":
                     case "s":
-                    {
-                        RaptureShellModule.Instance()->ExecuteMacro(RaptureMacroModule.Instance()->GetMacro(1, num));
-                        break;
-                    }
                     case "individual":
                     case "i":
                     {
@@ -294,7 +290,7 @@ namespace MacroChaining
 
         private bool CheckMacroRequirements(bool run = false)
         {
-            if (run == false && _lastMacro == null)
+            if (!run && _lastMacro == null)
             {
                 PrintError("No macro is running.");
                 return true;
